@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo sed -i -e 's/'\''host '\''$1''\'{
+	hardware ethernet '\''$2'\'';
+	fixed-address '''$3''';
+}''' //g /etc/dhcp/dhcpd.conf
+
+service isc-dhcp-server restart
